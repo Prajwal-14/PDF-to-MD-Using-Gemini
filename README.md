@@ -1,57 +1,77 @@
-# PDF to MarkDown Using LLM (Gemini)
+## PDF to Markdown Converter using Gemini API
 
-This project is based on converting small PDFs to Markdown file format using LLM with custom formatting options.
+This project is a Python-based PDF to Markdown converter that utilizes the Gemini API to extract and convert content from PDF documents into clean, structured Markdown format.
 
-## What is in this repo?
+## Features
 
-This repository contains basic project structure, requirements, and this README.
+Select and convert multiple PDF files
 
-## How to setup?
+Uses Google's Gemini 1.5 API for accurate text extraction and formatting
 
-**Remember to fork this repository and work in that repository only. All commits and pushed will be done to your own forked repo, and not this.** \
-**OR** \
-**Use this template to create a new repo**
+Automatically saves Markdown files to a dedicated folder
 
-1. First create a virtual environment. If you don't know how to do that, below are the basic commands: \
-   _Use Python 3.13 or greater_. \
-   _Do not use CMD.exe on Windows. Use Powershell_
+Command-line interface with user-friendly prompts
 
-```bash
+## Technologies Used
+
+Python 3.11
+
+Gemini API (Google Generative AI)
+
+PyMuPDF (fitz) for reading PDF
+
+InquirerPy for command-line interaction
+
+## Installation & Setup
+
+1. Clone the repository
+
+git clone (https://github.com/Prajwal-14/PDF-to-MD-Using-Gemini)
+
+2. Create a virtual environment
+
 python -m venv .venv
-```
+.venv\Scripts\activate  # for Windows
 
-2. Then activate the virtual environment using:
+3. Install dependencies
 
-```bash
-.\.venv\Scripts\Activate.ps1    # For Windows Powershell.
-
-source .venv/bin/activate       # For Linux and macOS.
-```
-
-Read more about virtual environments here: https://docs.python.org/3/library/venv.html
-
-3. Next install the requirements from `requirements.txt` file:
-
-```bash
 pip install -r requirements.txt
-```
 
-Now your project is setup and ready to be worked on.
+4. Set up Gemini API key
 
-## How to approach this project?
+Create a .env file in the root folder and add your Gemini API key:
 
-This project has the following goals:
+GOOGLE_API_KEY=your_gemini_api_key_here
 
-- Create a CLI UI to select .pdf files to be converted in current directory.
-- Create a new directory named `<current-directory>_converted-md`.
-- Store all converted .md files in the newly created directory
+## How to Run
 
-Use the bundled modules:
+python main.py
 
-- Google Genai
-- Inquirer
+Follow the on-screen prompts to choose the PDF file(s) you want to convert. Output Markdown files will be saved in the folder: PDF-to-MD-Using-Gemini_converted-md
 
-The stepwise process of how the application will work is:
+## Key Learnings
+
+Practical usage of Gemini API for document parsing
+
+File I/O handling in Python
+
+CLI interactivity with InquirerPy
+
+Markdown formatting logic
+
+## Author
+
+Prajwal TalwareGitHub: github.com/PrajwalTalware
+
+## License
+
+This project is for educational/internship purposes and currently not licensed for production use.
+
+## Live Demo
+
+Not applicable for this CLI-based project.
+
+## The stepwise process of how the application will work is:
 
 1. New directory is created.
 2. User will select files using inquirer.
